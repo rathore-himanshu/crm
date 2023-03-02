@@ -14,3 +14,13 @@ export const addNewContact = (req, res) => {
                 res.send(err)
         })
 }
+
+export const getContacts = (req, res) => {
+        Contact.find()
+        .then(contacts => {
+                res.json(contacts)
+        })
+        .catch(err => {
+                res.send(err)
+        })
+}
