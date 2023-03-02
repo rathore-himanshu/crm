@@ -48,3 +48,15 @@ export const updateContact = (req, res) => {
                 res.send(err)
         })
 }
+
+export const deleteContact = (req, res) => {
+        Contact.deleteOne( 
+                { _id: req.params.contactId},
+        )
+        .then(contact => {
+                res.json({message: 'Successfully deleted contact'})
+        })
+        .catch(err => {
+                res.send(err)
+        })
+}
